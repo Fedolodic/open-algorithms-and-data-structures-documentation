@@ -202,6 +202,6 @@ bool isValidSubsequence(vector<int> array, vector<int> sequence) {
 
 | | Time | Space |
 |:---:|:---:|:---:|
-|**Worse**| O(n) | O(1) |
+|**Worse**| O(*n*) | O(1) |
 
-Where n is the length of the array
+Where *n* is the length of the array
