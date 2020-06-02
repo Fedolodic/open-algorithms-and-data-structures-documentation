@@ -313,8 +313,34 @@ vector<int> twoNumberSum(vector<int> array, int targetSum) {
 
 ## Space-Time Complexity
 
+<Tabs
+  groupId="solutions"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
+  ]
+}>
+<TabItem value="s1">
+
 | | Time | Space |
 |:---:|:---:|:---:|
-|**Best**| O(n) | O(1) |
-|**Average**| O(n<sup>2</sup>) | O(1) |
-|**Worse**| O(n<sup>2</sup>) | O(1) |
+|**Worse**| O(*n*<sup>2</sup>) | O(1) |
+
+</TabItem>
+<TabItem value="s2">
+
+| | Time | Space |
+|:---:|:---:|:---:|
+|**Worse**| O(*n*) | O(*n*) |
+
+</TabItem>
+<TabItem value="s3">
+
+| | Time | Space |
+|:---:|:---:|:---:|
+|**Worse**| O(*n*log(*n*)) | O(1) |
+
+</TabItem>
+</Tabs>
