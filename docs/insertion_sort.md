@@ -6,7 +6,7 @@ title: Insertion Sort
 
 ![alt text][img]
 
-[img]: ../static/img/Insertion-S-Optimized.png 'Insertion Sort Flowchart!'
+[img]: /img/Insertion-S-Optimized.png 'Insertion Sort Flowchart!'
 
 ---
 ## Code
