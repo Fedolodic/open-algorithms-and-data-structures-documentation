@@ -11,7 +11,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_validateS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -51,7 +51,7 @@ def isValidSubsequence(array, sequence):
 ### JavaScript
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_validateS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -96,7 +96,7 @@ exports.isValidSubsequence = isValidSubsequence;
 ### Java
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_validateS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -151,7 +151,7 @@ class Program {
 ### C++
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_validateS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },

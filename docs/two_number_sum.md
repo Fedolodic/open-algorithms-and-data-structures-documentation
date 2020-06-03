@@ -11,7 +11,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_twoNS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -72,7 +72,7 @@ def twoNumberSum(array, targetSum):
 ### JavaScript
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_twoNS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -149,7 +149,7 @@ exports.twoNumberSum = twoNumberSum;
 ### Java
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_twoNS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -230,7 +230,7 @@ class Program {
 ### C++
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_twoNS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -314,7 +314,7 @@ vector<int> twoNumberSum(vector<int> array, int targetSum) {
 ## Space-Time Complexity
 
 <Tabs
-  groupId="solutions"
+  groupId="solutions_twoNS"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
