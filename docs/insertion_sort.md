@@ -2,6 +2,7 @@
 id: insertionS
 title: Insertion Sort
 ---
+
 ## Flowchart
 
 ![alt text][img]
@@ -9,6 +10,7 @@ title: Insertion Sort
 [img]: /img/Insertion-S-Optimized.png 'Insertion Sort Flowchart!'
 
 ---
+
 ## Code
 
 ### Python
@@ -99,7 +101,6 @@ vector<int> insertionSort(vector<int> array) {
 ```
 ---
 
-
 ## Space-Time Complexity
 
 | | Time | Space |
@@ -107,4 +108,3 @@ vector<int> insertionSort(vector<int> array) {
 |**Best**| O(*n*) | O(1) |
 |**Average**| O(*n*<sup>2</sup>) | O(1) |
 |**Worse**| O(*n*<sup>2</sup>) | O(1) |
-
