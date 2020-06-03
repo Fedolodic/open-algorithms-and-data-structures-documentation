@@ -104,7 +104,7 @@ vector<int> insertionSort(vector<int> array) {
 
 | | Time | Space |
 |:---:|:---:|:---:|
-|**Best**| O(n) | O(1) |
-|**Average**| O(n<sup>2</sup>) | O(1) |
-|**Worse**| O(n<sup>2</sup>) | O(1) |
+|**Best**| O(*n*) | O(1) |
+|**Average**| O(*n*<sup>2</sup>) | O(1) |
+|**Worse**| O(*n*<sup>2</sup>) | O(1) |
 
