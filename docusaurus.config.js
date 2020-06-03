@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Open Data Structures & Algorithms',
-  tagline: 'Open source documentation for data structures and algorithms from a software engineering perspective.',
+  tagline: 'Open source documentation for data structures and algorithms from a software engineering perspective',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
