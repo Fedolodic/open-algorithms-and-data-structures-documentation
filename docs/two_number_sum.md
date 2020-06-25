@@ -146,6 +146,77 @@ exports.twoNumberSum = twoNumberSum;
 </TabItem>
 </Tabs>
 
+### TypeScript
+
+<Tabs
+  groupId="solutions_twoNS"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
+  ]
+}>
+<TabItem value="s1">
+
+```typescript
+export function twoNumberSum(array: number[], targetSum: number) {
+  for (let i = 0; i < array.length - 1; i++) {
+    const firstNum = array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      const secondNum = array[j];
+      if (firstNum + secondNum === targetSum) {
+        return [firstNum, secondNum];
+      }
+    }
+  }
+  return [];
+}
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```typescript
+export function twoNumberSum(array: number[], targetSum: number) {
+  const nums: {[key: number]: boolean} = {};
+  for (const num of array) {
+    const potentialMatch = targetSum - num;
+    if (potentialMatch in nums) {
+      return [potentialMatch, num];
+    } else {
+      nums[num] = true;
+    }
+  }
+  return [];
+}
+```
+
+</TabItem>
+<TabItem value="s3">
+
+```typescript
+export function twoNumberSum(array: number[], targetSum: number) {
+  array.sort((a, b) => a - b);
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    const currentSum = array[left] + array[right];
+    if (currentSum === targetSum) {
+      return [array[left], array[right]];
+    } else if (currentSum < targetSum) {
+      left++;
+    } else if (currentSum > targetSum) {
+      right--;
+    }
+  }
+  return [];
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### Java
 
 <Tabs
@@ -328,6 +399,8 @@ vector<int> twoNumberSum(vector<int> array, int targetSum) {
 |:---:|:---:|:---:|
 |**Worse**| O(*n*<sup>2</sup>) | O(1) |
 
+Where *n* is the length of the input array
+
 </TabItem>
 <TabItem value="s2">
 
@@ -335,12 +408,16 @@ vector<int> twoNumberSum(vector<int> array, int targetSum) {
 |:---:|:---:|:---:|
 |**Worse**| O(*n*) | O(*n*) |
 
+Where *n* is the length of the input array
+
 </TabItem>
 <TabItem value="s3">
 
 | | Time | Space |
 |:---:|:---:|:---:|
 |**Worse**| O(*n*log(*n*)) | O(1) |
+
+Where *n* is the length of the input array
 
 </TabItem>
 </Tabs>
