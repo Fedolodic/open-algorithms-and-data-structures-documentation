@@ -93,6 +93,47 @@ exports.isValidSubsequence = isValidSubsequence;
 </TabItem>
 </Tabs>
 
+### TypeScript
+
+<Tabs
+  groupId="solutions_validateS"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```typescript
+export function isValidSubsequence(array: number[], sequence: number[]) {
+  let arrIdx = 0;
+  let seqIdx = 0;
+  while (arrIdx < array.length && seqIdx < sequence.length) {
+    if (array[arrIdx] === sequence[seqIdx]) seqIdx++;
+    arrIdx++;
+  }
+  return seqIdx === sequence.length;
+}
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```typescript
+export function isValidSubsequence(array: number[], sequence: number[]) {
+  let seqIdx = 0;
+  for (const value of array) {
+    if (seqIdx === sequence.length) break;
+    if (sequence[seqIdx] === value) seqIdx++;
+  }
+  return seqIdx === sequence.length;
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### Java
 
 <Tabs
