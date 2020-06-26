@@ -34,8 +34,6 @@ def nodeDepths(root):
         stack.append({"node": node.right, "depth": depth + 1})
     return sumOfDepths
 ​
-​
-# This is the class of the input binary tree.
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -52,8 +50,6 @@ def nodeDepths(root, depth=0):
         return 0
     return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1)
 ​
-​
-# This is the class of the input binary tree.
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -89,8 +85,7 @@ function nodeDepths(root) {
   }
   return sumOfDepths;
 }
-​
-// This is the class of the input binary tree.
+
 class BinaryTree {
   constructor(value) {
     this.value = value;
@@ -111,7 +106,6 @@ function nodeDepths(root, depth = 0) {
   return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1);
 }
 ​
-// This is the class of the input binary tree.
 class BinaryTree {
   constructor(value) {
     this.value = value;
@@ -121,6 +115,70 @@ class BinaryTree {
 }
 ​
 exports.nodeDepths = nodeDepths;
+```
+
+</TabItem>
+</Tabs>
+
+### TypeScript
+
+<Tabs
+  groupId="solutions_findCVIB"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```typescript
+export function nodeDepths(root: BinaryTree) {
+  let sumOfDepths = 0;
+  const stack: {node: BinaryTree | null; depth: number}[] = [{node: root, depth: 0}];
+  while (stack.length > 0) {
+    const {node, depth} = stack.pop()!;
+    if (node === null) continue;
+    sumOfDepths += depth;
+    stack.push({node: node.left, depth: depth + 1});
+    stack.push({node: node.right, depth: depth + 1});
+  }
+  return sumOfDepths;
+}
+​
+class BinaryTree {
+  value: number;
+  left: BinaryTree | null;
+  right: BinaryTree | null;
+​
+  constructor(value: number) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```typescript
+export function nodeDepths(root: BinaryTree | null, depth = 0): number {
+  if (root === null) return 0;
+  return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1);
+}
+​
+class BinaryTree {
+  value: number;
+  left: BinaryTree | null;
+  right: BinaryTree | null;
+​
+  constructor(value: number) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 ```
 
 </TabItem>

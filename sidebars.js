@@ -16,9 +16,7 @@ module.exports = {
             'insertionS',
             'selectionS',
             'palindromeC',
-            'caesarCE',
-            'doc2',
-            'doc3'
+            'caesarCE'
         ],
         Features: ['mdx'],
     },

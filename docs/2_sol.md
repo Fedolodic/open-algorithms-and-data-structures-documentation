@@ -1,6 +1,6 @@
 ---
-id: doc3
-title: This is Document Number 3
+id: sol_2
+title: This is Document Number 2
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac euismod odio, eu consequat dui. Nullam molestie consectetur risus id imperdiet. Proin sodales ornare turpis, non mollis massa ultricies id. Nam at nibh scelerisque, feugiat ante non, dapibus tortor. Vivamus volutpat diam quis tellus elementum bibendum. Praesent semper gravida velit quis aliquam. Etiam in cursus neque. Nam lectus ligula, malesuada et mauris a, bibendum faucibus mi. Phasellus ut interdum felis. Phasellus in odio pulvinar, porttitor urna eget, fringilla lectus. Aliquam sollicitudin est eros. Mauris consectetur quam vitae mauris interdum hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -12,3 +12,170 @@ Sed consequat sollicitudin ipsum eget tempus. Integer a aliquet velit. In justo 
 Phasellus feugiat purus eu tortor ultrices finibus. Ut libero nibh, lobortis et libero nec, dapibus posuere eros. Sed sagittis euismod justo at consectetur. Nulla finibus libero placerat, cursus sapien at, eleifend ligula. Vivamus elit nisl, hendrerit ac nibh eu, ultrices tempus dui. Nam tellus neque, commodo non rhoncus eu, gravida in risus. Nullam id iaculis tortor.
 
 Nullam at odio in sem varius tempor sit amet vel lorem. Etiam eu hendrerit nisl. Fusce nibh mauris, vulputate sit amet ex vitae, congue rhoncus nisl. Sed eget tellus purus. Nullam tempus commodo erat ut tristique. Cras accumsan massa sit amet justo consequat eleifend. Integer scelerisque vitae tellus id consectetur.
+
+## Code
+
+### Python
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  groupId="solutions_DOCUMENT_ID"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```python
+
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```python
+
+```
+
+</TabItem>
+</Tabs>
+
+### JavaScript
+
+<Tabs
+  groupId="solutions_DOCUMENT_ID"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```javascript
+
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```javascript
+
+```
+
+</TabItem>
+</Tabs>
+
+### TypeScript
+
+<Tabs
+  groupId="solutions_DOCUMENT_ID"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```typescript
+
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```typescript
+
+```
+
+</TabItem>
+</Tabs>
+
+### Java
+
+<Tabs
+  groupId="solutions_DOCUMENT_ID"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```java
+
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```java
+
+```
+
+</TabItem>
+</Tabs>
+
+### C++
+
+<Tabs
+  groupId="solutions_DOCUMENT_ID"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```cpp
+
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```cpp
+
+```
+
+</TabItem>
+</Tabs>
+
+---
+
+## Space-Time Complexity
+
+<Tabs
+  groupId="solutions_DOCUMENT_ID"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+| | Time | Space |
+|:---:|:---:|:---:|
+|**Best**|  |  |
+|**Average**|  |  |
+|**Worse**|  |  |
+
+</TabItem>
+<TabItem value="s2">
+
+| | Time | Space |
+|:---:|:---:|:---:|
+|**Best**|  |  |
+|**Average**|  |  |
+|**Worse**|  |  |
+
+</TabItem>
+</Tabs>

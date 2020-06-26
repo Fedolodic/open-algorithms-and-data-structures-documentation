@@ -1,9 +1,9 @@
 ---
-id: doc2
-title: Document Number 2
+id: sol_1
+title: Document Number 1
 ---
 
-This is a link to [another document.](doc3.md) This is a link to an [external page.](http://www.example.com/)
+This is a link to [another document.](2_sol.md) This is a link to an [external page.](http://www.example.com/)
 
 ---
 
