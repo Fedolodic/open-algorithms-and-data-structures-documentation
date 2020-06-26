@@ -128,6 +128,91 @@ exports.findClosestValueInBst = findClosestValueInBst;
 </TabItem>
 </Tabs>
 
+### TypeScript
+
+<Tabs
+  groupId="solutions_findCVIB"
+  defaultValue="s1"
+  values={[
+    { label: 'Solution 1', value: 's1', },
+    { label: 'Solution 2', value: 's2', },
+  ]
+}>
+<TabItem value="s1">
+
+```typescript
+class BST {
+  value: number;
+  left: BST | null;
+  right: BST | null;
+​
+  constructor(value: number) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+​
+export function findClosestValueInBst(tree: BST, target: number) {
+  return findClosestValueInBstHelper(tree, target, tree.value);
+}
+​
+function findClosestValueInBstHelper(tree: BST | null, target: number, closest: number): number {
+  if (tree === null) return closest;
+  if (Math.abs(target - closest) > Math.abs(target - tree.value)) {
+    closest = tree.value;
+  }
+  if (target < tree.value) {
+    return findClosestValueInBstHelper(tree.left, target, closest);
+  } else if (target > tree.value) {
+    return findClosestValueInBstHelper(tree.right, target, closest);
+  } else {
+    return closest;
+  }
+}
+```
+
+</TabItem>
+<TabItem value="s2">
+
+```typescript
+class BST {
+  value: number;
+  left: BST | null;
+  right: BST | null;
+​
+  constructor(value: number) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+​
+export function findClosestValueInBst(tree: BST, target: number) {
+  return findClosestValueInBstHelper(tree, target, tree.value);
+}
+​
+function findClosestValueInBstHelper(tree: BST | null, target: number, closest: number) {
+  let currentNode = tree;
+  while (currentNode !== null) {
+    if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
+      closest = currentNode.value;
+    }
+    if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else if (target > currentNode.value) {
+      currentNode = currentNode.right;
+    } else {
+      break;
+    }
+  }
+  return closest;
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### Java
 
 <Tabs
@@ -325,6 +410,8 @@ int findClosestValueInBstHelper(BST *tree, int target, double closest) {
 |**Average**| O(log(*n*)) | O(log(*n*)) |
 |**Worse**| O(*n*) | O(*n*) |
 
+Where *n* is the number of nodes in the BST
+
 </TabItem>
 <TabItem value="s2">
 
@@ -332,6 +419,8 @@ int findClosestValueInBstHelper(BST *tree, int target, double closest) {
 |:---:|:---:|:---:|
 |**Average**| O(log(*n*)) | O(1) |
 |**Worse**| O(*n*) | O(1) |
+
+Where *n* is the number of nodes in the BST
 
 </TabItem>
 </Tabs>
