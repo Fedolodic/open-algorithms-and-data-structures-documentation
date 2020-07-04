@@ -3,6 +3,12 @@ id: nodeD
 title: Node Depths
 ---
 
+## Problem
+
+Add all the node depths in a binary tree and return that value.
+
+i.e. Return the sum of all nodes' depths.
+
 ## Code
 
 ### Python
@@ -345,8 +351,7 @@ public:
 int nodeDepths(BinaryTree *root, int depth = 0) {
   if (root == NULL)
     return 0;
-  return depth + nodeDepths(root->left, depth + 1) +
-         nodeDepths(root->right, depth + 1);
+  return depth + nodeDepths(root->left, depth + 1) + nodeDepths(root->right, depth + 1);
 }
 ```
 
@@ -364,3 +369,49 @@ When the tree is balanced:
 |**Average**| O(*n*) | O(*h*) |
 
 Where *n* is the number of nodes in the Binary Tree and *h* is the height of the Binary Tree
+
+---
+
+## Notes
+
+:::note keep in mind
+
+We need to compute the depth of each particular node
+
+The root node is the only node in the tree, that without any other information about the tree, we know what the node's depth is
+
+When we're at the root node, not only do we know what our depth is but we also know what the depth of our two children nodes are
+
+At every level, each node will have been told by its parent what its depth is and then, it can tell each children nodes what their depth is by basically telling them your depth is my depth, plus one.
+
+:::
+
+### Iterative Approach
+
+:::tip solution 1
+
+We're going to be using a **stack** to traverse the tree
+
+Grab the root node and store it on top of the stack and for every node in the stack, the node's depth
+
+As long as the stack is not empty, apply our algorithm
+
+This means pop the last node from the stack, add depth to running sum and push the children nodes, and their depths, to the top of the stack
+
+:::
+
+### Recursive Approach
+
+:::tip solution 2
+
+f(*n*, *d*) = *d* + f(*l*, *d+1*) + f(*r*, *d+1*)
+
+:::
+
+> *n* is the node that we're at
+>
+> *d* is the depth of the node
+>
+>*l* is left child node
+>
+>*r* is right child node
