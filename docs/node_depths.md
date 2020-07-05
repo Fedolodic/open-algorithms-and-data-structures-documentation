@@ -404,7 +404,7 @@ This means pop the last node from the stack, add depth to running sum and push t
 
 :::tip solution 2
 
-f(*n*, *d*) = *d* + f(*l*, *d+1*) + f(*r*, *d+1*)
+f(*n*, *d*) = *d* + f(*l*, *d*+1) + f(*r*, *d*+1)
 
 :::
 
