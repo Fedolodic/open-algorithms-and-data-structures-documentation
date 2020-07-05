@@ -8,7 +8,7 @@ title: Product Sum
 ### Python
 
 ```python
-def productSum(array, multiplier=1):
+def productSum(array, multiplier = 1):
     sum = 0
     for element in array:
         if type(element) is list:
