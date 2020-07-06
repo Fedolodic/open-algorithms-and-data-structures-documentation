@@ -9,6 +9,8 @@ Add all the node depths in a binary tree and return that value.
 
 i.e. Return the sum of all nodes' depths.
 
+---
+
 ## Code
 
 ### Python
