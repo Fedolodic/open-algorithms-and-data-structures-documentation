@@ -384,7 +384,7 @@ The root node is the only node in the tree, that without any other information a
 
 When we're at the root node, not only do we know what our depth is but we also know what the depth of our two children nodes are
 
-At every level, each node will have been told by its parent what its depth is and then, it can tell each children nodes what their depth is by basically telling them your depth is my depth, plus one.
+At every level, each node will have been told by its parent what its depth is and then, it can tell each children nodes what their depth is by basically telling them your depth is my depth, plus one
 
 :::
 
