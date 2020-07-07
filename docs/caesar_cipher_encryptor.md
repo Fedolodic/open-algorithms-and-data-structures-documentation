@@ -30,6 +30,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -67,6 +68,22 @@ def getNewLetter(letter, key, alphabet):
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```python
+def caesarCipherEncryptor(string, key):
+	return_str = ""
+	new_key = key % 26
+    for letter in string:
+		new_unicode = ord(letter) + new_key
+		if new_unicode > 122:
+			distance = new_unicode % 122
+			new_unicode = 96 + distance
+		return_str += chr(new_unicode)
+	return return_str
+```
+
+</TabItem>
 </Tabs>
 
 ### JavaScript
@@ -77,6 +94,7 @@ def getNewLetter(letter, key, alphabet):
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -122,6 +140,27 @@ exports.caesarCipherEncryptor = caesarCipherEncryptor;
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```javascript
+function caesarCipherEncryptor(string, key) {
+  let returnStr = "";
+	const newKey = key % 26;	
+	for (const letter of string) {
+		let newUnicode = letter.charCodeAt() + newKey;
+		if (newUnicode > 122) {
+			const distance = newUnicode % 122;
+			newUnicode = 96 + distance;
+		}
+		returnStr += String.fromCharCode(newUnicode);
+	}
+	return returnStr;
+}
+
+exports.caesarCipherEncryptor = caesarCipherEncryptor;
+```
+
+</TabItem>
 </Tabs>
 
 ### TypeScript
@@ -132,6 +171,7 @@ exports.caesarCipherEncryptor = caesarCipherEncryptor;
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -173,6 +213,26 @@ function getNewLetter(letter: string, key: number, alphabet: string[]) {
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```typescript
+export function caesarCipherEncryptor(string: string, key: number) {
+  let returnStr = "";
+	const newKey = key % 26;
+	
+	for (const letter of string) {
+		let newUnicode = letter.charCodeAt(0) + newKey;
+		if (newUnicode > 122) {
+			const distance = newUnicode % 122;
+			newUnicode = 96 + distance;
+		}
+		returnStr += String.fromCharCode(newUnicode);
+	}
+	return returnStr;
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### Java
@@ -183,6 +243,7 @@ function getNewLetter(letter: string, key: number, alphabet: string[]) {
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -230,6 +291,27 @@ class Program {
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```java
+class Program {
+  public static String caesarCypherEncryptor(String str, int key) {
+    String returnStr = "";
+		int newKey = key % 26;
+		for (int i = 0; i < str.length(); i++) {
+			int newUnicode = str.charAt(i) + newKey;
+			if (newUnicode > 122) {
+				int distance = newUnicode % 122;
+				newUnicode = 96 + distance;
+			}
+			returnStr += (char) newUnicode;
+		}	
+    return returnStr;
+  }
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### C++
@@ -240,6 +322,7 @@ class Program {
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -290,6 +373,27 @@ char getNewLetter(char letter, int key, string alphabet) {
   int newLetterCode = alphabet.find(letter) + key;
   return newLetterCode <= 25 ? alphabet[newLetterCode]
                              : alphabet[-1 + newLetterCode % 25];
+}
+```
+
+</TabItem>
+<TabItem value="s3">
+
+```cpp
+using namespace std;
+
+string caesarCypherEncryptor(string str, int key) {
+  string returnStr = "";
+	int newKey = key % 26;
+	for (int i = 0; i < str.length(); i++) {
+		int newUnicode = str[i] + newKey;
+		if (newUnicode > 122) {
+			int distance = newUnicode % 122;
+			newUnicode = 96 + distance;
+		}
+		returnStr += newUnicode;
+	}
+  return returnStr;
 }
 ```
 
