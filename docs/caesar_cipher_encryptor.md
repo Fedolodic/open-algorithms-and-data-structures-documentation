@@ -3,6 +3,20 @@ id: caesarCE
 title: Caesar Cipher Encryptor
 ---
 
+## Problem
+
+Given lowercase letters and an integer that represents a key, return a new string created by shifting every letter in the input string by *k* positions in the alphabet, where *k* is the key.
+
+:::important
+
+Letters should "wrap" around the alphabet.
+
+i.e. The letter `z` shifterd by one returns the letter `a`.
+
+:::
+
+---
+
 ## Code
 
 ### Python
@@ -16,6 +30,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -53,6 +68,22 @@ def getNewLetter(letter, key, alphabet):
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```python
+def caesarCipherEncryptor(string, key):
+	return_str = ""
+	new_key = key % 26
+    for letter in string:
+		new_unicode = ord(letter) + new_key
+		if new_unicode > 122:
+			distance = new_unicode % 122
+			new_unicode = 96 + distance
+		return_str += chr(new_unicode)
+	return return_str
+```
+
+</TabItem>
 </Tabs>
 
 ### JavaScript
@@ -63,6 +94,7 @@ def getNewLetter(letter, key, alphabet):
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -108,6 +140,27 @@ exports.caesarCipherEncryptor = caesarCipherEncryptor;
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```javascript
+function caesarCipherEncryptor(string, key) {
+  let returnStr = "";
+	const newKey = key % 26;	
+	for (const letter of string) {
+		let newUnicode = letter.charCodeAt() + newKey;
+		if (newUnicode > 122) {
+			const distance = newUnicode % 122;
+			newUnicode = 96 + distance;
+		}
+		returnStr += String.fromCharCode(newUnicode);
+	}
+	return returnStr;
+}
+
+exports.caesarCipherEncryptor = caesarCipherEncryptor;
+```
+
+</TabItem>
 </Tabs>
 
 ### TypeScript
@@ -118,6 +171,7 @@ exports.caesarCipherEncryptor = caesarCipherEncryptor;
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -159,6 +213,26 @@ function getNewLetter(letter: string, key: number, alphabet: string[]) {
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```typescript
+export function caesarCipherEncryptor(string: string, key: number) {
+  let returnStr = "";
+	const newKey = key % 26;
+	
+	for (const letter of string) {
+		let newUnicode = letter.charCodeAt(0) + newKey;
+		if (newUnicode > 122) {
+			const distance = newUnicode % 122;
+			newUnicode = 96 + distance;
+		}
+		returnStr += String.fromCharCode(newUnicode);
+	}
+	return returnStr;
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### Java
@@ -169,6 +243,7 @@ function getNewLetter(letter: string, key: number, alphabet: string[]) {
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -216,6 +291,27 @@ class Program {
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```java
+class Program {
+  public static String caesarCypherEncryptor(String str, int key) {
+    String returnStr = "";
+		int newKey = key % 26;
+		for (int i = 0; i < str.length(); i++) {
+			int newUnicode = str.charAt(i) + newKey;
+			if (newUnicode > 122) {
+				int distance = newUnicode % 122;
+				newUnicode = 96 + distance;
+			}
+			returnStr += (char) newUnicode;
+		}	
+    return returnStr;
+  }
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### C++
@@ -226,6 +322,7 @@ class Program {
   values={[
     { label: 'Solution 1', value: 's1', },
     { label: 'Solution 2', value: 's2', },
+    { label: 'Solution 3', value: 's3', },
   ]
 }>
 <TabItem value="s1">
@@ -280,6 +377,27 @@ char getNewLetter(char letter, int key, string alphabet) {
 ```
 
 </TabItem>
+<TabItem value="s3">
+
+```cpp
+using namespace std;
+
+string caesarCypherEncryptor(string str, int key) {
+  string returnStr = "";
+	int newKey = key % 26;
+	for (int i = 0; i < str.length(); i++) {
+		int newUnicode = str[i] + newKey;
+		if (newUnicode > 122) {
+			int distance = newUnicode % 122;
+			newUnicode = 96 + distance;
+		}
+		returnStr += newUnicode;
+	}
+  return returnStr;
+}
+```
+
+</TabItem>
 </Tabs>
 
 ---
@@ -291,3 +409,66 @@ char getNewLetter(char letter, int key, string alphabet) {
 |**Worse**| O(*n*) | O(*n*) |
 
 Where *n* is the length of the input string
+
+---
+
+## Notes
+
+### Letter -> Unicode -> Character Approach
+
+:::tip solution 1
+
+Create an array to contain all of our new letters, and iterate through the input string
+
+At each letter, apply algorithm to shift letter by the key, get a new letter, and then throw that new letter into return array
+
+Once you're done building the array, you join it all together into a string, and return that string
+
+
+```py
+nLC = ord(letter) + key
+
+if nLC <= 122:
+    return chr(nLC)
+else:
+    return chr(96 + nLC % 122)
+```
+
+e.g. Let's say we do `z` + 2, which is 122 + 2
+
+We divide 124 by 122 and get the remainder (mod %), which is going to be 2. Then, we add this to 96 which is the unicode that comes right before `a`
+
+**What happens if the key is a big number?**
+
+e.g. key = 54
+
+You would end up calling the `chr()` on something that's greater than 122. And, that's not what you want. You want to wrap around the alphabet
+
+So, what we can do is that at the very beginning of our algorithm, instead of dealing with a big number like 54, what we can do is say `key = key % 26`, because 26 is the number of letters in our alphabet
+
+By doing this, we don't end up in the situation where our key is outside of our alphabet size
+
+:::
+
+### Alphabet Array Approach
+
+:::tip solution 2
+
+Create an array with all the letters in the alphabet, the index that each letter is at is their corresponding "unicode" value
+
+e.g. the letter `a` would be at index 0, and the letter `z` would be at index 25, and that would be their corresponding code value
+
+i.e. instead of `a` => 97 it'll be `a` => 0, and instead of `z` => 122 it'll be `z` => 25
+
+Our algorithm would then change to:
+
+```py
+nLC = al_arr.index(letter) + key
+
+if nLC <= 25:
+    return al_arr[nLC]
+else:
+    return al_arr[-1 + nLC % 25]
+```
+
+:::
