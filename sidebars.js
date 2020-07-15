@@ -24,7 +24,7 @@ module.exports = {
                     'Heaps': []
                 },
                 {
-                    'Linked Lists': []
+                    'Linked Lists': ['linkedLC']
                 },
                 {
                     'Recursion': ['nthF', 'productS']
