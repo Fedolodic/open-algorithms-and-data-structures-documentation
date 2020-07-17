@@ -199,6 +199,7 @@ class DoublyLinkedList {
       if (nodeToRemove.value === value) this.remove(nodeToRemove);
     }
   }
+
   remove(node) {
     if (node === this.head) this.head = this.head.next;
     if (node === this.tail) this.tail = this.tail.prev;
