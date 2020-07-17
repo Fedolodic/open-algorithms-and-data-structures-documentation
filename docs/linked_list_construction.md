@@ -3,6 +3,21 @@ id: linkedLC
 title: Linked List Construction
 ---
 
+## Problem
+
+Create a doubly linked list class that supports:
+
+* Setting the head and the tail of the linked list
+    * i.e. Grab an existing node and set it to be the head/tail. Or, create a new node and set it to be the head/tail
+* Inserting nodes before and after other nodes, as well as at given positions
+    * i.e. Insert a given node before a given node, existing or not. Or, insert a given node at a given position
+* Removing given nodes and removing nodes with given values
+    * i.e. Remove a node from a given value. Or, remove all nodes that have a given value
+* Searching for nodes with given values
+    * i.e. Look through the linked list and return a boolean value if the linked list contains a node with a given value
+
+---
+
 ## Code
 
 ### Python
@@ -552,13 +567,13 @@ public:
 
 ## Space-Time Complexity
 
-setHead(), setTail(), insertBefore(), insertAfter(), and remove():
+`setHead()`, `setTail()`, `insertBefore()`, `insertAfter()`, and `remove()`:
 
 | | Time | Space |
 |:---:|:---:|:---:|
 |**Worse**| O(1) | O(1) |
 
-insertAtPosition():
+`insertAtPosition()`:
 
 | | Time | Space |
 |:---:|:---:|:---:|
@@ -566,10 +581,124 @@ insertAtPosition():
 
 where *p* is the input position
 
-removeNodesWithValue(), containsNodeWithValue():
+`removeNodesWithValue()`, `containsNodeWithValue()`:
 
 | | Time | Space |
 |:---:|:---:|:---:|
 |**Worse**| O(*n*) | O(1) |
 
 where *n* is the number of nodes in the linked list
+
+---
+
+## Notes
+
+:::note keep in mind
+
+You'll only ever have direct access to the `head` or to the `tail` of a linked list. Then, you can go in either direction that you want. Because of this, you should be able to set both the `head` and the `tail` of the linked list in any point in time
+
+We can use a lot of our methods to implement other methods. i.e. We are going to have building blocks in the construction of our linked list to make implementation of other methods a lot easier
+
+:::
+
+### Contains Node With Value
+
+:::tip Contains node with value
+
+The first method that we'll implement is our searching method, `containsNodeWithValue()`
+
+The way that we're going to implement it is start at the `head`, traverse the linked linked list and do the check 
+
+The psuedocode would be be, so long as the current node that we're at is not the null/None value, and so long as the current node's value is not equal to the node that we're looking for, set our pointer to our current `node.next`
+
+:::
+
+### Remove
+
+:::tip Remove
+
+Now we can move on to our removal methods. The first method that we're going to start with is the one that we'll be able to use afterwards in other methods. This method will be the simple removal of a node, `remove()`
+
+The way that we're going to implement it is first check if `node.prev` or `node.next` are not null/None, because if we're dealing with the null/None sides of the `head` or the `tail` then we're not going to be able to access properties of those null/None, those null/None won't have a `.next` or `.prev` property, and we want to do work on the pointers so that we don't lose access to them. So, if we're dealing with the `head`, then set the `head` of the linked list to be the `.next` node of the linked list, `head = head.next`. Then, the opposite would be done for the `tail`
+
+Next, if `node.prev` is not null/None then we'll grab it's `.next` pointer and set it to whatever node our current node's `.next` is pointing at. i.e. Go to the `.prev` node of our current node, update it's `.next` pointer to be the `.next` node of our current node. Then, do exactly the opposite, go to the `.next` node of our current node, go to it's `.prev` pointer, and update it to be the `.prev` pointer of of current node
+
+Finally, we can set both the `.prev` and `.next` pointers of our current node to null/None
+
+:::
+
+### Remove Nodes With Value
+
+:::tip Remove nodes with value
+
+Now we're going to do the remove nodes with value, `removeNodesWithValue()`
+
+We're going to do something similar to the searching method, we're going to start at the head of the node and we're going to say, so long as our node is not null/None, explore it. This means, look at the value of the current node and if it's not the value that we're trying to remove then we'll move along, but if it is then we're going to call our `remove()` method on it
+
+The key point here is that we need to keep track of the node that we're about to remove, move on to the `.next` node, check if the node that we're about to remove is the same as the given node to remove, and then remove it. We basically want to be careful about losing access to nodes by removing too fast
+
+:::
+
+### Insert Before
+
+:::tip Insert before
+
+Now we move on to the insertion methods. We'll start with `insertBefore()`. So you're given a node that you want to insert before the following given node, `node`, and then you're given the actual node that you want to insert, `nodeToInsert`
+
+The first thing that we want to do is check if we're dealing with a linked list with only one node, we'll do this by checking if `nodeToInsert` is equal to `head` and `tail`, if this is true then don't do anything. Now, if we aren't dealing with a linked list with one node then we have to account for the case that `nodeToInsert` is already in our linked list, if this is the case then we want to remove `nodeToInsert` from our linked list using our `remove()` method that we already implemented
+
+Then, we want to set `nodeToInsert`'s `.prev` pointer to `node`'s `.prev` pointer, since remember, we have access to both nodes, then we want to set `nodeToInsert`'s `.next` pointer to `node`
+
+So now, we need to update `node`. The first thing that we have to do is check if `node` is the `head` of the linked list because if it is and we want to insert `nodeToInsert` before `node`, then `nodeToInsert` better become the `head`
+
+So how do we check if `node` is the head? We do this by checking if `node`'s `.prev` pointer is pointing to null/None, and if it is, then set the `head` to `nodeToInsert`. If it's not then take `node`'s `.prev.next` pointer, which normally points to `node`, and make it point to `nodeToInsert`
+
+Finally, make `node`'s `.prev` pointer point to `nodeToInsert`. Realize that the order of operations is really important
+
+:::
+
+### Insert After
+
+:::tip Insert after
+
+The `insertAfter()` method will be exactly the same as the `insertBefore()` method except we're going to be dealing with the `tail` and be doing the opposite of the operations
+
+:::
+
+### Set Head
+
+:::tip Set head
+
+Next, we'll work on the `setHead()` method, which is sort of the main method
+
+The first thing we'll check is if we're dealing with an empty linked list; `if head = null/None`. If this is true then we'll say `head = node` and `tail = node`
+
+Now, if we're not dealing with an empty linked list, then we'll want to set the `head`. We just created an `insertBefore()` method so we can literally say "insert before the head of our linked list", `insertBefore(head, node)`
+
+:::
+
+### Set Tail
+
+:::tip Set tail
+
+Similarly, for the `setTail()` method we'll first check if our tail is null/None, because if it is then that means that our `head` is also null/None and that means that our linked list is empty. So, we'll just call the `setHead()` method with the `node`, `setHead(node)`
+
+Otherwise, if it's not an empty linked list, call our `insertAfter()` method and insert the `node` after the `tail`, `insertAfter(tail, node)`. Now our implementation starts to be really clean
+
+:::
+
+### Insert At Position
+
+:::tip Insert at position
+
+Finally, we'll work on the `insertAtPosition()` method, where we're given a node that we want to insert, `nodeToInsert`, and we're given a position that we want to insert at, `position`. We're going to make use of all of our methods, so our implementation is going to be very clean
+
+The first thing we'll check is if the `position` is equal to 1, if true then we're effectively inserting at the position of the `head` i.e. We're setting the `head`, thus making use of our `setHead()` method on our `nodeToInsert`, `setHead(nodeToInsert)`
+
+Otherwise, if the position is not 1 then we'll set a pointer at the head of the linked list, start moving the pointer through the linked list, once we reach the `position` check if we're pointing at a node or if we're at the end of the linked list
+
+If we're pointing at a node then this is the position that we want to insert our `nodeToInsert` at, so insert `nodeToInsert` before the `node` using our `insertBefore` method, `insertBefore(node, nodeToInsert)`
+
+If our pointer is at the end of the linked list then now we're dealing with the `tail` and thus we'll call our `setTail()` method on `nodeToInsert`, `setTail(nodeToInsert)`
+
+:::
