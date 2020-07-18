@@ -11,7 +11,7 @@ Given lowercase letters and an integer that represents a key, return a new strin
 
 Letters should "wrap" around the alphabet.
 
-i.e. The letter `z` shifterd by one returns the letter `a`.
+i.e. The letter `z` shifted by one returns the letter `a`.
 
 :::
 
