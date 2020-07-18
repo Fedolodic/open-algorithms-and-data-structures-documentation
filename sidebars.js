@@ -1,23 +1,52 @@
 module.exports = {
-    someSidebar: {
-        Docusaurus: [
-            'doc1',
-            'twoNS',
-            'validateS',
-            'findCVIB',
-            'branchS',
-            'nodeD',
-            'depthFS',
-            'nthF',
-            'productS',
-            'binaryS',
-            'findTLN',
-            'bubbleS',
-            'insertionS',
-            'selectionS',
-            'palindromeC',
-            'caesarCE'
-        ],
-        Features: ['mdx'],
-    },
+    docs: [
+        {
+            Library: [
+                {
+                    'Arrays': ['twoNS', 'validateS', 'smallestD']
+                },
+                {
+                    'Binary Search Trees': ['findCVIB']
+                },
+                {
+                    'Binary Trees': ['branchS', 'nodeD']
+                },
+                {
+                    'Dynamic Programming': []
+                },
+                {
+                    'Famous Algorithms': []
+                },
+                {
+                    'Graphs': ['depthFS']
+                },
+                {
+                    'Heaps': []
+                },
+                {
+                    'Linked Lists': ['linkedLC']
+                },
+                {
+                    'Recursion': ['nthF', 'productS']
+                },
+                {
+                    'Searching': ['binaryS', 'findTLN']
+                },
+                {
+                    'Sorting': ['bubbleS', 'insertionS', 'selectionS']
+                },
+                {
+                    'Stacks': []
+                },
+                {
+                    'Strings': ['palindromeC', 'caesarCE']
+                },
+                {
+                    'Tries': []
+                },
+                'doc1',
+            ],
+            Features: ['mdx'],
+        }
+    ]
 };
