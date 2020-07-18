@@ -3,6 +3,14 @@ id: smallestD
 title: Smallest Difference
 ---
 
+### Problem
+
+Given two arrays of integer values, find the pair of numbers where one number comes from the first array and another number comes from the second array with the smallest difference 
+
+i.e. Find the two closest numbers of two given arrays
+
+---
+
 ## Code
 
 ### Python
@@ -181,3 +189,39 @@ vector<int> smallestDifference(vector<int> arrayOne, vector<int> arrayTwo) {
 |**Worse**| O(*n*log(*n*) + *m*log(*m*)) | O(1) |
 
 Where *n* is the length of the first input array and *m* is the length of the second input array
+
+Both arrays don't have to have the same length, this is why possibily different length arrays have different variables, *n* and *m*
+
+The reason for this time complexity is because we're sorting both arrays, and if we use an optimal sorting algorithm like Quick Sort or Merge Sort, the time complexity is going to be O(*n*log(*n*)) for the first array and O(*m*log(*m*)) for the second array. Continuing, the actual pointer logic doesn't take much time, we iterate once through all the numbers in total which takes roughly O(*n* + *m*), which doesn't really affect the overall time complexity of sorting the arrays in the beginning
+
+---
+
+### Notes
+
+:::caution naive solution
+
+Use two for loops to generate all the different pairs of numbers that you can using both arrays, calculate their difference, and keep track of the smallest difference
+
+This problem can be solved more optimally using a different algorithm
+
+:::
+
+:::tip solution 1
+
+Sort both arrays in ascending order before we do anything. We're going to be applying a technique that you can use in a lot of other questions related to array manipulation, that takes advantage of the properties of a sorted array to solve the problem
+
+So, we currently have:
+
+*A* ::= {*x* | *x* ∈ 𝕫 and *x*<sub>1</sub> ≤ *x*<sub>2</sub> ≤ ... ≤ *x*<sub>n</sub>}
+
+*B* ::= {*y* | *y* ∈ 𝕫 and *y*<sub>1</sub> ≤ *y*<sub>2</sub> ≤ ... ≤ *y*<sub>n</sub>}
+
+If *x* = *y*, then that means that this pair is our smallest, this is the pair we'll want to return, because they're going to have the smallest difference of zero
+
+If *x* < *y*, we'll want to compute their current difference and if this is the smallest difference we have thus far, update the smallest difference with the current difference. Then, we'll want to increment *x* or decrement *y* to bring both pairs of numbers closer and closer to each other
+
+Notice that because our arrays are sorted we know that *x*<sub>*n*-k</sub> ≤ *x*<sub>*n*</sub>, so we shouldn't look at any element before of our current *x*, because if we do those differences will be greater than the difference that we currently have, which is not what we want. Similarly, we also know that *y*<sub>*n*</sub> ≤ *y*<sub>*n*+k</sub>, so we shouldn't look at any element after our current *y*, because if we do those differences will again be greater than the difference we currently have
+
+If *x* > *y*, we'll want to compute their current difference and if this is the smallest difference we have thus far, update the smallest difference with the current difference. Then, we'll want to increment *y* or decrement *x* to again bring both pairs of numbers closer and closer to each other
+
+:::
