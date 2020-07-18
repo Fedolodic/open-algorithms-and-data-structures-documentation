@@ -3,7 +3,7 @@ module.exports = {
         {
             Library: [
                 {
-                    'Arrays': ['twoNS', 'validateS']
+                    'Arrays': ['twoNS', 'validateS', 'smallestD']
                 },
                 {
                     'Binary Search Trees': ['findCVIB']
