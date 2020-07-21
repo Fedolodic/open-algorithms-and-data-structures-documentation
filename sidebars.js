@@ -6,7 +6,7 @@ module.exports = {
                     'Arrays': ['twoNS', 'validateS', 'smallestD']
                 },
                 {
-                    'Binary Search Trees': ['findCVIB']
+                    'Binary Search Trees': ['findCVIB', 'minHB']
                 },
                 {
                     'Binary Trees': ['branchS', 'nodeD']
