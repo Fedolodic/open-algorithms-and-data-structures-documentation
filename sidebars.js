@@ -36,7 +36,7 @@ module.exports = {
                     'Sorting': ['bubbleS', 'insertionS', 'selectionS']
                 },
                 {
-                    'Stacks': []
+                    'Stacks': ['balancedB']
                 },
                 {
                     'Strings': ['palindromeC', 'caesarCE']

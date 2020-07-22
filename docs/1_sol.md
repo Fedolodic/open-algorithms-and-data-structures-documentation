@@ -39,6 +39,8 @@ This is a link to [another document.](2_sol.md) This is a link to an [external p
 
 ```
 
+---
+
 ## Space-Time Complexity
 
 | | Time | Space |
