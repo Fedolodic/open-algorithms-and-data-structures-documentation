@@ -1,5 +1,5 @@
 ---
-id: nthF
+id: nF
 title: Nth Fibonacci
 ---
 
