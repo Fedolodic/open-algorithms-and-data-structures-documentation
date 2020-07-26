@@ -21,7 +21,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="solutions_DOCUMENT_ID"
+  groupId="solutions_minHB"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -134,7 +134,7 @@ class BST:
 ### JavaScript
 
 <Tabs
-  groupId="solutions_DOCUMENT_ID"
+  groupId="solutions_minHB"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -261,7 +261,7 @@ exports.minHeightBst = minHeightBst;
 ### TypeScript
 
 <Tabs
-  groupId="solutions_DOCUMENT_ID"
+  groupId="solutions_minHB"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -394,7 +394,7 @@ export class BST {
 ### Java
 
 <Tabs
-  groupId="solutions_DOCUMENT_ID"
+  groupId="solutions_minHB"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -541,7 +541,7 @@ class Program {
 ### C++
 
 <Tabs
-  groupId="solutions_DOCUMENT_ID"
+  groupId="solutions_minHB"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
@@ -696,7 +696,7 @@ BST *constructMinHeightBst(vector<int> array, int startIdx, int endIdx) {
 ## Space-Time Complexity
 
 <Tabs
-  groupId="solutions_DOCUMENT_ID"
+  groupId="solutions_minHB"
   defaultValue="s1"
   values={[
     { label: 'Solution 1', value: 's1', },
