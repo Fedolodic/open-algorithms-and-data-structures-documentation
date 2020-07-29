@@ -39,7 +39,7 @@ module.exports = {
                     'Stacks': ['balancedB']
                 },
                 {
-                    'Strings': ['palindromeC', 'caesarCE']
+                    'Strings': ['palindromeC', 'caesarCE', 'longestPS']
                 },
                 {
                     'Tries': []
