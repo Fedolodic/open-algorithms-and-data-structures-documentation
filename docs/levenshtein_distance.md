@@ -3,6 +3,14 @@ id: levenshteinD
 title: Levenshtein Distance
 ---
 
+## Problem
+
+Write a function that finds the minimum number of edit operations that we can perform on one string to turn it into another string
+
+The three edit operations are either an insertion of a letter, a deletion of a letter, or a substitution of a letter for another letter
+
+---
+
 ## Code
 
 ### Python
@@ -403,5 +411,56 @@ Where *n* and *m* are the lengths of the two input strings
 
 Where *n* and *m* are the lengths of the two input strings
 
+Essentially, since we're only using two rows we can turn the O(*nm*) space into the minimum length of the two strings, O(min(*n*, *m*)) 
+
 </TabItem>
 </Tabs>
+
+---
+
+## Notes
+
+:::note keep in mind
+
+This kind of problem becomes exceedingly hard if we have very long strings, thus dynamic programming is going to be a really useful approach for this question. It'll allow us to solve very small parts of our problem and then use these solutions to build our final solution
+
+:::
+
+Our 2D Array, Edits Table, will look like this:
+
+| | " " | o | d | s | a |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **" "** | 0 | 1 | 2 | 3 | 4 |
+| **o** | 1 | 0 | 1 | 2 | 3 |
+| **s** | 2 | 1 | 1 | 1 | 2 |
+| **e** | 3 | 2 | 2 | 2 | 2 |
+
+:::tip solution 1
+
+As with most dynamic programming problems, our general approach will be to build a 2D array (table). Our 2D array will be called, edit table, E, and we need as many columns as there are letters in one of our strings plus one, because we're adding the empty string, and same for rows we will need as many rows are there as letters in our other string plus one. 
+
+At each index in the 2D array, we're going to store the minimum number of edit operations that we can perform on a sub-string of our first string to turn it into another sub-string of our second string
+
+Our formula will be, if letter of string 1 in row, `str1[r-1]`, is equal to letter of string 2 of column, `str2[c-1]`, then our current value in E will be its diagonal value, `E[r][c] = E[r-1][c-1]`
+
+Otherwise our current value in E is equal to one additional edit operation plus the minimum value of the three neighboring boxes (left, diagonal, up), `E[r][c] = 1 + min(E[r][c-1], E[r-1][c-1], E[r-1][c])`
+
+:::
+
+:::tip solution 2
+
+When we're dealing with dynamic programming problems and we have to build big 2D arrays, you have to ask yourself, do we need this 2D array? If you look at the formula and look at any given iteration, what values that are stored are we using? Notice that in our edit array, E, we're only using values that are located in our current row and our previous row. i.e. We're only using two rows
+
+The first thing that we'll want to do is find the smallest of the two strings, `small = str1 if len(str1) < len(str2) else str2`. And, the biggest of the two strings, `big = str1 if len(str1) >= len(str2) else str2`
+
+Next, we'll initialize our even edits for the zeroth row, the first row, with the length of small, because we want to have the smallest amount of columns in the two rows to store as few things as possible; `evenEdits = [x for x in range(len(small) + 1)]` since we want our first row to look like this: [0, 1, 2, 3, ...]
+
+Then, we'll initialize our odd edits for the next row, the second row, with anything in the length of small, `oddEdits = [None for x in range(len(small) + 1)]`
+
+Now, we'll go into the loops of our formula, `for i in range(1, len(big))`, because we're going to have length of big plus one rows. Inside, we'll have to do some swapping because sometimes our current row, `edit[i]`, is going to be our odd edits row, and sometimes it's going to be our even edits row. So what we're going to do is say, `if i % 2 == 1: currentEdits = oddEdits` and `previousEdits = evenEdits`, `currentEdits`  and `previousEdits` are just going to be variables that are going to swap depending on the evenness of i of the row that we're at. Otherwise, if i is even then we're going to say `currentEdits = evenEdits` and `previousEdits = oddEdits`. Before we can enter our second for loop, we have to say that the first value in our current edits has to be equal to i, `currentEdits[0] = i`, because this will make the first column look like this vertical: [0, 1, 2, 3, ...]; this is our little trick
+
+Jumping into the second for loop, we'll say, `for j in range(1, len(small) + 1)`, if we're looking at the same letter in both strings, `if big[i - 1] == small[i - 1]`, then our current value will be the value of the diagonal of the previous row, `currentEdits[j] = previousEdits[j - 1]`. Otherwise, our current value will be equal to one additional edit operation plus the minimum of the three neighboring boxes (left, diagonal, up), `currentEdits[j] = 1 + min(currentEdits[j - 1], pevioiusEdits[j - 1], previousEdits[j])`
+
+Now that we're done with our for loops we can just return. We want to return the last value of even edits or odd edits depending on the number of rows. We know that we have the same number of rows as the length of our big string, so we can say if our number of rows in total is even, then return the last value in even edits, otherwise return the last value in odd edits, `return evenEdits[-1] if len(big) % 2 == 0 else oddEdits[-1]` 
+
+:::
