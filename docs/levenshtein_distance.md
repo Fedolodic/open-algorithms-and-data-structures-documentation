@@ -437,7 +437,7 @@ Our 2D Array, Edits Table, will look like this:
 
 :::tip solution 1
 
-As with most dynamic programming problems, our general approach will be to build a 2D array (table). Our 2D array will be called, edit table, E, and we need as many columns as there are letters in one of our strings plus one, because we're adding the empty string, and same for rows we will need as many rows are there as letters in our other string plus one. 
+As with most dynamic programming problems, our general approach will be to build a 2D array (table). Our 2D array will be called, edit table, E, and we need as many columns as there are letters in one of our strings plus one, because we're adding the empty string, and same for rows we will need as many rows are there as letters in our other string plus one
 
 At each index in the 2D array, we're going to store the minimum number of edit operations that we can perform on a sub-string of our first string to turn it into another sub-string of our second string
 
