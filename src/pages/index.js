@@ -8,12 +8,12 @@ import styles from './styles.module.css';
 
 const features = [
     {
-        title: <>Flowcharts</>,
+        title: <>Naïve to Experienced</>,
         imageUrl: 'img/undraw_docusaurus_mountain.svg',
         description: (
             <>
-                Get a high-level overview of the solution at hand. Flowcharts also have a nice color palette.
-                For all you visual learners.
+                Get a high-level overview of the solution(s) at hand. Some solutions are better than others, as always,
+                we'll guide you through development.
             </>
         ),
     },
@@ -23,7 +23,7 @@ const features = [
         description: (
             <>
                 We speak many <code>languages</code>. Get solutions in yours. We currently have Python, JavaScript,
-                Java, and C++ support.
+                TypeScript, Java, and C++ support.
             </>
         ),
     },

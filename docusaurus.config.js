@@ -38,10 +38,6 @@ module.exports = {
               label: 'Style Guide',
               to: 'docs/',
             },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
           ],
         },
         {
@@ -84,11 +80,11 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
+          homePageId: 'levenshteinD',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/Fedolodic/open-algorithms-and-data-structures-documentation',
+              'https://github.com/Fedolodic/open-algorithms-and-data-structures-documentation',
         },
         blog: {
           showReadingTime: true,
