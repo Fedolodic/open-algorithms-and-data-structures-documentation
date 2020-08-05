@@ -12,7 +12,7 @@ module.exports = {
                     'Binary Trees': ['branchS', 'nodeD']
                 },
                 {
-                    'Dynamic Programming': ['levenshteinD']
+                    'Dynamic Programming': ['levenshteinD', 'minNOCFC']
                 },
                 {
                     'Famous Algorithms': []
