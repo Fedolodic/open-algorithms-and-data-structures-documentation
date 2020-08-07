@@ -44,9 +44,27 @@ module.exports = {
                 {
                     'Tries': []
                 },
+            ],
+            Patterns: [
+                'cyclicS',
+                'fastASP',
+                'inPROLL',
+                'kWM',
+                'mergeI',
+                'modifiedBS',
+                'slidingW',
+                'subsets',
+                'topKE',
+                'topologicalS',
+                'treeBFS',
+                'treeDFS',
+                'twoH',
+                'twoP',
+            ],
+            Features: [
+                'mdx',
                 'doc1',
             ],
-            Features: ['mdx'],
         }
     ]
 };
