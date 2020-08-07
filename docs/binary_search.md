@@ -23,8 +23,8 @@ import TabItem from '@theme/TabItem';
 ```python
 def binarySearch(array, target):
     return binarySearchHelper(array, target, 0, len(array) - 1)
-​
-​
+
+
 def binarySearchHelper(array, target, left, right):
     if left > right:
         return -1
@@ -44,8 +44,8 @@ def binarySearchHelper(array, target, left, right):
 ```python
 def binarySearch(array, target):
     return binarySearchHelper(array, target, 0, len(array) - 1)
-​
-​
+
+
 def binarySearchHelper(array, target, left, right):
     while left <= right:
         middle = (left + right) // 2
@@ -78,7 +78,7 @@ def binarySearchHelper(array, target, left, right):
 function binarySearch(array, target) {
   return binarySearchHelper(array, target, 0, array.length - 1);
 }
-​
+
 function binarySearchHelper(array, target, left, right) {
   if (left > right) return -1;
   const middle = Math.floor((left + right) / 2);
@@ -91,7 +91,7 @@ function binarySearchHelper(array, target, left, right) {
     return binarySearchHelper(array, target, middle + 1, right);
   }
 }
-​
+
 exports.binarySearch = binarySearch;
 ```
 
@@ -102,7 +102,7 @@ exports.binarySearch = binarySearch;
 function binarySearch(array, target) {
   return binarySearchHelper(array, target, 0, array.length - 1);
 }
-​
+
 function binarySearchHelper(array, target, left, right) {
   while (left <= right) {
     const middle = Math.floor((left + right) / 2);
@@ -117,7 +117,7 @@ function binarySearchHelper(array, target, left, right) {
   }
   return -1;
 }
-​
+
 exports.binarySearch = binarySearch;
 ```
 
@@ -140,7 +140,7 @@ exports.binarySearch = binarySearch;
 export function binarySearch(array: number[], target: number) {
   return binarySearchHelper(array, target, 0, array.length - 1);
 }
-​
+
 function binarySearchHelper(array: number[], target: number, left: number, right: number): number {
   if (left > right) return -1;
   const middle = Math.floor((left + right) / 2);
@@ -162,7 +162,7 @@ function binarySearchHelper(array: number[], target: number, left: number, right
 export function binarySearch(array: number[], target: number) {
   return binarySearchHelper(array, target, 0, array.length - 1);
 }
-​
+
 function binarySearchHelper(array: number[], target: number, left: number, right: number) {
   while (left <= right) {
     const middle = Math.floor((left + right) / 2);
@@ -199,7 +199,7 @@ class Program {
   public static int binarySearch(int[] array, int target) {
     return binarySearch(array, target, 0, array.length - 1);
   }
-​
+
   public static int binarySearch(int[] array, int target, int left, int right) {
     if (left > right) {
       return -1;
@@ -225,7 +225,7 @@ class Program {
   public static int binarySearch(int[] array, int target) {
     return binarySearch(array, target, 0, array.length - 1);
   }
-​
+
   public static int binarySearch(int[] array, int target, int left, int right) {
     while (left <= right) {
       int middle = (left + right) / 2;
@@ -261,14 +261,14 @@ class Program {
 ```cpp
 #include <vector>
 using namespace std;
-​
+
 int binarySearch(vector<int> array, int target);
 int binarySearchHelper(vector<int> array, int target, int left, int right);
-​
+
 int binarySearch(vector<int> array, int target) {
   return binarySearchHelper(array, target, 0, array.size() - 1);
 }
-​
+
 int binarySearchHelper(vector<int> array, int target, int left, int right) {
   if (left > right) {
     return -1;
@@ -291,14 +291,14 @@ int binarySearchHelper(vector<int> array, int target, int left, int right) {
 ```cpp
 #include <vector>
 using namespace std;
-​
+
 int binarySearch(vector<int> array, int target);
 int binarySearchHelper(vector<int> array, int target, int left, int right);
-​
+
 int binarySearch(vector<int> array, int target) {
   return binarySearchHelper(array, target, 0, array.size() - 1);
 }
-​
+
 int binarySearchHelper(vector<int> array, int target, int left, int right) {
   while (left <= right) {
     int middle = (left + right) / 2;
