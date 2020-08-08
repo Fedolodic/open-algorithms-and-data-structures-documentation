@@ -27,7 +27,7 @@ module.exports = {
                     'Linked Lists': ['linkedLC']
                 },
                 {
-                    'Recursion': ['nF', 'productS']
+                    'Recursion': ['nF', 'productS', 'permutations']
                 },
                 {
                     'Searching': ['binaryS', 'findTLN']
