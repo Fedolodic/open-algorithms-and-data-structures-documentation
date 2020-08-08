@@ -25,8 +25,8 @@ def getPermutations(array):
     permutations = []
     permutationsHelper(array, [], permutations)
     return permutations
-​
-​
+
+
 def permutationsHelper(array, currentPermutation, permutations):
     if not len(array) and len(currentPermutation):
         permutations.append(currentPermutation)
@@ -45,8 +45,8 @@ def getPermutations(array):
     permutations = []
     permutationsHelper(0, array, permutations)
     return permutations
-​
-​
+
+
 def permutationsHelper(i, array, permutations):
     if i == len(array) - 1:
         permutations.append(array[:])
@@ -55,8 +55,8 @@ def permutationsHelper(i, array, permutations):
             swap(array, i, j)
             permutationsHelper(i + 1, array, permutations)
             swap(array, i, j)
-​
-​
+
+
 def swap(array, i, j):
     array[i], array[j] = array[j], array[i]
 ```
@@ -82,7 +82,7 @@ function getPermutations(array) {
   permutationsHelper(array, [], permutations);
   return permutations;
 }
-​
+
 function permutationsHelper(array, currentPermutation, permutations) {
   if (!array.length && currentPermutation.length) {
     permutations.push(currentPermutation);
@@ -94,7 +94,7 @@ function permutationsHelper(array, currentPermutation, permutations) {
     }
   }
 }
-​
+
 exports.getPermutations = getPermutations;
 ```
 
@@ -107,7 +107,7 @@ function getPermutations(array) {
   permutationsHelper(0, array, permutations);
   return permutations;
 }
-​
+
 function permutationsHelper(i, array, permutations) {
   if (i === array.length - 1) {
     permutations.push(array.slice());
@@ -119,13 +119,13 @@ function permutationsHelper(i, array, permutations) {
     }
   }
 }
-​
+
 function swap(i, j, array) {
   const temp = array[i];
   array[i] = array[j];
   array[j] = temp;
 }
-​
+
 exports.getPermutations = getPermutations;
 ```
 
@@ -150,7 +150,7 @@ export function getPermutations(array: number[]) {
   permutationsHelper(array, [], permutations);
   return permutations;
 }
-​
+
 function permutationsHelper(array: number[], currentPermutation: number[], permutations: number[][]) {
   if (!array.length && currentPermutation.length) {
     permutations.push(currentPermutation);
@@ -173,7 +173,7 @@ export function getPermutations(array: number[]) {
   permutationsHelper(0, array, permutations);
   return permutations;
 }
-​
+
 function permutationsHelper(i: number, array: number[], permutations: number[][]) {
   if (i === array.length - 1) {
     permutations.push(array.slice());
@@ -185,7 +185,7 @@ function permutationsHelper(i: number, array: number[], permutations: number[][]
     }
   }
 }
-​
+
 function swap(i: number, j: number, array: number[]) {
   const temp = array[i];
   array[i] = array[j];
@@ -210,14 +210,14 @@ function swap(i: number, j: number, array: number[]) {
 
 ```java
 import java.util.*;
-​
+
 class Program {
   public static List<List<Integer>> getPermutations(List<Integer> array) {
     List<List<Integer>> permutations = new ArrayList<List<Integer>>();
     getPermutations(array, new ArrayList<Integer>(), permutations);
     return permutations;
   }
-​
+
   public static void getPermutations(
       List<Integer> array, List<Integer> currentPermutation, List<List<Integer>> permutations) {
     if (array.size() == 0 && currentPermutation.size() > 0) {
@@ -240,14 +240,14 @@ class Program {
 
 ```java
 import java.util.*;
-​
+
 class Program {
   public static List<List<Integer>> getPermutations(List<Integer> array) {
     List<List<Integer>> permutations = new ArrayList<List<Integer>>();
     getPermutations(0, array, permutations);
     return permutations;
   }
-​
+
   public static void getPermutations(int i, List<Integer> array, List<List<Integer>> permutations) {
     if (i == array.size() - 1) {
       permutations.add(new ArrayList<Integer>(array));
@@ -259,7 +259,7 @@ class Program {
       }
     }
   }
-​
+
   public static void swap(List<Integer> array, int i, int j) {
     Integer tmp = array.get(i);
     array.set(i, array.get(j));
@@ -286,16 +286,16 @@ class Program {
 ```cpp
 #include <vector>
 using namespace std;
-​
+
 void permutationsHelper(vector<int> array, vector<int> currentPermutation,
                         vector<vector<int>> *permutations);
-​
+
 vector<vector<int>> getPermutations(vector<int> array) {
   vector<vector<int>> permutations;
   permutationsHelper(array, {}, &permutations);
   return permutations;
 }
-​
+
 void permutationsHelper(vector<int> array, vector<int> currentPermutation,
                         vector<vector<int>> *permutations) {
   if (array.size() == 0 && currentPermutation.size() > 0) {
@@ -319,16 +319,16 @@ void permutationsHelper(vector<int> array, vector<int> currentPermutation,
 ```cpp
 #include <vector>
 using namespace std;
-​
+
 void permutationsHelper(int i, vector<int> &array,
                         vector<vector<int>> &permutations);
-​
+
 vector<vector<int>> getPermutations(vector<int> array) {
   vector<vector<int>> permutations;
   permutationsHelper(0, array, permutations);
   return permutations;
 }
-​
+
 void permutationsHelper(int i, vector<int> &array,
                         vector<vector<int>> &permutations) {
   if (i == array.size() - 1) {
