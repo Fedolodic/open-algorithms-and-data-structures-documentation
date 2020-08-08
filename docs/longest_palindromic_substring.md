@@ -43,8 +43,8 @@ def longestPalindromicSubstring(string):
             if len(substring) > len(longest) and isPalindrome(substring):
                 longest = substring
     return longest
-​
-​
+
+
 def isPalindrome(string):
     leftIdx = 0
     rightIdx = len(string) - 1
@@ -68,8 +68,8 @@ def longestPalindromicSubstring(string):
         longest = max(odd, even, key=lambda x: x[1] - x[0])
         currentLongest = max(longest, currentLongest, key=lambda x: x[1] - x[0])
     return string[currentLongest[0] : currentLongest[1]]
-​
-​
+
+
 def getLongestPalindromeFrom(string, leftIdx, rightIdx):
     while leftIdx >= 0 and rightIdx < len(string):
         if string[leftIdx] != string[rightIdx]:
@@ -107,7 +107,7 @@ function longestPalindromicSubstring(string) {
   }
   return longest;
 }
-​
+
 function isPalindrome(string) {
   let leftIdx = 0;
   let rightIdx = string.length - 1;
@@ -118,7 +118,7 @@ function isPalindrome(string) {
   }
   return true;
 }
-​
+
 exports.longestPalindromicSubstring = longestPalindromicSubstring;
 ```
 
@@ -136,7 +136,7 @@ function longestPalindromicSubstring(string) {
   }
   return string.slice(currentLongest[0], currentLongest[1]);
 }
-​
+
 function getLongestPalindromeFrom(string, leftIdx, rightIdx) {
   while (leftIdx >= 0 && rightIdx < string.length) {
     if (string[leftIdx] !== string[rightIdx]) break;
@@ -145,7 +145,7 @@ function getLongestPalindromeFrom(string, leftIdx, rightIdx) {
   }
   return [leftIdx + 1, rightIdx];
 }
-​
+
 exports.longestPalindromicSubstring = longestPalindromicSubstring;
 ```
 
@@ -177,7 +177,7 @@ export function longestPalindromicSubstring(string: string) {
   }
   return longest;
 }
-​
+
 function isPalindrome(string: string) {
   let leftIdx = 0;
   let rightIdx = string.length - 1;
@@ -204,7 +204,7 @@ export function longestPalindromicSubstring(string: string) {
   }
   return string.slice(currentLongest[0], currentLongest[1]);
 }
-​
+
 function getLongestPalindromeFrom(string: string, leftIdx: number, rightIdx: number) {
   while (leftIdx >= 0 && rightIdx < string.length) {
     if (string[leftIdx] !== string[rightIdx]) break;
@@ -244,7 +244,7 @@ class Program {
     }
     return longest;
   }
-​
+
   public static boolean isPalindrome(String str) {
     int leftIdx = 0;
     int rightIdx = str.length() - 1;
@@ -278,7 +278,7 @@ class Program {
     }
     return str.substring(currentLongest[0], currentLongest[1]);
   }
-​
+
   public static int[] getLongestPalindromeFrom(String str, int leftIdx, int rightIdx) {
     while (leftIdx >= 0 && rightIdx < str.length()) {
       if (str.charAt(leftIdx) != str.charAt(rightIdx)) {
@@ -309,9 +309,9 @@ class Program {
 
 ```cpp
 using namespace std;
-​
+
 bool isPalindrome(string str);
-​
+
 string longestPalindromicSubstring(string str) {
   string longest = "";
   for (int i = 0; i < str.length(); i++) {
@@ -324,7 +324,7 @@ string longestPalindromicSubstring(string str) {
   }
   return longest;
 }
-​
+
 bool isPalindrome(string str) {
   int leftIdx = 0;
   int rightIdx = str.length() - 1;
@@ -345,9 +345,9 @@ bool isPalindrome(string str) {
 ```cpp
 #include <vector>
 using namespace std;
-​
+
 vector<int> getLongestPalindromeFrom(string str, int leftIdx, int rightIdx);
-​
+
 string longestPalindromicSubstring(string str) {
   vector<int> currentLongest{0, 1};
   for (int i = 1; i < str.length(); i++) {
@@ -361,7 +361,7 @@ string longestPalindromicSubstring(string str) {
   }
   return str.substr(currentLongest[0], currentLongest[1] - currentLongest[0]);
 }
-​
+
 vector<int> getLongestPalindromeFrom(string str, int leftIdx, int rightIdx) {
   while (leftIdx >= 0 && rightIdx < str.length()) {
     if (str[leftIdx] != str[rightIdx]) {
