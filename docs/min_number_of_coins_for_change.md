@@ -33,7 +33,7 @@ function minNumberOfCoinsForChange(n, denoms) {
   }
   return numOfCoins[n] !== Infinity ? numOfCoins[n] : -1;
 }
-​
+
 exports.minNumberOfCoinsForChange = minNumberOfCoinsForChange;
 ```
 
@@ -58,7 +58,7 @@ export function minNumberOfCoinsForChange(n: number, denoms: number[]) {
 
 ```java
 import java.util.Arrays;
-​
+
 class Program {
   public static int minNumberOfCoinsForChange(int n, int[] denoms) {
     int[] numOfCoins = new int[n + 1];
@@ -88,7 +88,7 @@ class Program {
 #include <vector>
 #include <climits>
 using namespace std;
-​
+
 int minNumberOfCoinsForChange(int n, vector<int> denoms) {
   vector<int> numOfCoins(n + 1, INT_MAX);
   numOfCoins[0] = 0;
