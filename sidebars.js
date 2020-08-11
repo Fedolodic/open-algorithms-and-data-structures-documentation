@@ -9,7 +9,7 @@ module.exports = {
                     'Binary Search Trees': ['findCVIB', 'minHB']
                 },
                 {
-                    'Binary Trees': ['branchS', 'nodeD']
+                    'Binary Trees': ['branchS', 'nodeD', 'maxPSIBT']
                 },
                 {
                     'Dynamic Programming': ['levenshteinD', 'minNOCFC']
