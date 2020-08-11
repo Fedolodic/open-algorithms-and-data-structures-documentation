@@ -127,7 +127,7 @@ class Program {
     public int value;
     public BinaryTree left;
     public BinaryTree right;
-​
+
     public BinaryTree(int value) {
       this.value = value;
     }
