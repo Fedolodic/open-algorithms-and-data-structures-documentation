@@ -27,7 +27,7 @@ module.exports = {
                     'Linked Lists': ['linkedLC']
                 },
                 {
-                    'Recursion': ['nF', 'productS', 'permutations']
+                    'Recursion': ['nF', 'productS']
                 },
                 {
                     'Searching': ['binaryS', 'findTLN']
@@ -47,7 +47,8 @@ module.exports = {
             ],
             Patterns: [
                 'slidingW',
-                'twoP'
+                'treeDFS',
+                'twoP',
             ],
             Features: [
                 'mdx',
